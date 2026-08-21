@@ -1,12 +1,36 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AluraFlix</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AluraFlix</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <header>
     <h1>AluraFlix</h1>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/PlulyWs1kS4?si=wHNEX2NijDtmTgcy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </header>
+
+  <main>
+    <!-- Seção do Formulário de Cadastro -->
+    <section class="form-container">
+      <h2>Cadastrar Novo Filme</h2>
+      <form id="filmForm">
+        <input type="text" id="title" placeholder="Título do Filme" required>
+        <input type="url" id="poster" placeholder="URL da Capa (Imagem)" required>
+        <input type="url" id="trailer" placeholder="URL do Trailer (YouTube)" required>
+        <button type="submit">Adicionar Filme</button>
+      </form>
+    </section>
+
+    <!-- Catálogo de Filmes -->
+    <section class="gallery-container">
+      <h2>Catálogo de Filmes</h2>
+      <div id="movieGallery" class="gallery"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
