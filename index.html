@@ -8,20 +8,20 @@
 </head>
 <body>
 
-  <!-- Tela 1: Formulario de Cadastro (Exibida Primeiro) -->
+  <!-- Tela de Cadastro / Login -->
   <div id="authScreen" class="screen">
     <div class="auth-box">
       <h1>AluraFlix</h1>
-      <h2>Crie sua conta para entrar</h2>
+      <h2>Cadastre-se para acessar o catálogo</h2>
       <form id="userForm">
-        <input type="text" id="name" placeholder="Nome Completo" required>
+        <input type="text" id="name" placeholder="Seu Nome" required>
         <input type="email" id="email" placeholder="Seu E-mail" required>
         <button type="submit">Entrar no App</button>
       </form>
     </div>
   </div>
 
-  <!-- Tela 2: Aplicativo de Filmes (Oculta ate cadastrar) -->
+  <!-- Tela Principal do Aplicativo -->
   <div id="appScreen" class="screen hidden">
     <header>
       <h1>AluraFlix</h1>
@@ -37,6 +37,16 @@
         <div id="movieGallery" class="gallery"></div>
       </section>
     </main>
+  </div>
+
+  <!-- Modal do Player de Vídeo Interno -->
+  <div id="videoModal" class="modal hidden">
+    <div class="modal-content">
+      <button id="closeModal">Fechar Trailer</button>
+      <div class="video-wrapper">
+        <iframe id="videoPlayer" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
   </div>
 
   <script src="script.js"></script>
