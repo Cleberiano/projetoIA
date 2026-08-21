@@ -1,49 +1,49 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Catálogo completo com 9 filmes (os 4 anteriores + 5 novos) e imagens garantidas
+  // Catálogo completo com 9 filmes e capas oficiais do TMDB
   const readyMovies = [
     {
       title: "Spider-Man: Into the Spider-Verse",
-      poster: "https://via.placeholder.com/500x750/7c3aed/ffffff?text=Spider-Man",
+      poster: "https://image.tmdb.org/t/p/w500/iiZZdoQBEYBv6id8su7ImL0oCbD.jpg",
       trailer: "https://www.youtube.com/embed/g4Hbz2jLxvQ"
     },
     {
       title: "Interstellar",
-      poster: "https://via.placeholder.com/500x750/3b82f6/ffffff?text=Interstellar",
+      poster: "https://image.tmdb.org/t/p/w500/gEU2QpI6EItY52nUoB2M0mOaC5H.jpg",
       trailer: "https://www.youtube.com/embed/zSWdZVtXT7E"
     },
     {
       title: "The Matrix",
-      poster: "https://via.placeholder.com/500x750/10b981/000000?text=The+Matrix",
+      poster: "https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg",
       trailer: "https://www.youtube.com/embed/vKQi3bBA1y8"
     },
     {
       title: "Inception",
-      poster: "https://via.placeholder.com/500x750/6366f1/ffffff?text=Inception",
+      poster: "https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkYSBsmkZWTpsTaO.jpg",
       trailer: "https://www.youtube.com/embed/YoHD9XEInc0"
     },
     {
       title: "Avengers: Endgame",
-      poster: "https://via.placeholder.com/500x750/ef4444/ffffff?text=Avengers",
+      poster: "https://image.tmdb.org/t/p/w500/or06FN3Dka5tukK1e9sl16pB3iy.jpg",
       trailer: "https://www.youtube.com/embed/TcMBFSGVi1c"
     },
     {
       title: "Batman: The Dark Knight",
-      poster: "https://via.placeholder.com/500x750/475569/ffffff?text=The+Dark+Knight",
+      poster: "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
       trailer: "https://www.youtube.com/embed/EXeTwQWrcwY"
     },
     {
       title: "Avatar: The Way of Water",
-      poster: "https://via.placeholder.com/500x750/0284c7/ffffff?text=Avatar+2",
+      poster: "https://image.tmdb.org/t/p/w500/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg",
       trailer: "https://www.youtube.com/embed/d9MyW72ELq0"
     },
     {
       title: "Oppenheimer",
-      poster: "https://via.placeholder.com/500x750/d97706/ffffff?text=Oppenheimer",
+      poster: "https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg",
       trailer: "https://www.youtube.com/embed/uYPbbksJxIg"
     },
     {
       title: "Dune: Part Two",
-      poster: "https://via.placeholder.com/500x750/b45309/ffffff?text=Dune+2",
+      poster: "https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg",
       trailer: "https://www.youtube.com/embed/Way9Dexny3w"
     }
   ];
