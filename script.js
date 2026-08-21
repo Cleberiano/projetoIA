@@ -1,24 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Catálogo de filmes prontos com imagens e trailers embed otimizados
+  // Catálogo de filmes prontos com imagens de servidores abertos (TMDB)
   const readyMovies = [
     {
       title: "Spider-Man: Into the Spider-Verse",
-      poster: "https://m.media-amazon.com/images/M/MVBMTg5NzEwODg5Ml5BMl5BanBnXkFtZTgwMDEwNjg3NjM@._V1_.jpg",
+      poster: "https://image.tmdb.org/t/p/w500/uJQdJ46mK08X6tTqT5eHlqYp0f7.jpg",
       trailer: "https://www.youtube.com/embed/g4Hbz2jLxvQ"
     },
     {
       title: "Interstellar",
-      poster: "https://m.media-amazon.com/images/M/MVBMTExMzU2ODEwMV5BMl5BanBnXkFtZTgwMDkxOTE2MjE@._V1_.jpg",
+      poster: "https://image.tmdb.org/t/p/w500/gEU2QpI6EItY52nUoB2M0mOaC5H.jpg",
       trailer: "https://www.youtube.com/embed/zSWdZVtXT7E"
     },
     {
       title: "The Matrix",
-      poster: "https://m.media-amazon.com/images/M/MVBMTkxNDY3NTM3NV5BMl5BanBnXkFtZTcwMDg0Mzg3NA@@._V1_.jpg",
+      poster: "https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg",
       trailer: "https://www.youtube.com/embed/vKQi3bBA1y8"
     },
     {
       title: "Inception",
-      poster: "https://m.media-amazon.com/images/M/MVBMjAxMzU3NjMyNF5BMl5BanBnXkFtZTcwMzg0MzUyMw@@._V1_.jpg",
+      poster: "https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkYSBsmkZWTpsTaO.jpg",
       trailer: "https://www.youtube.com/embed/YoHD9XEInc0"
     }
   ];
