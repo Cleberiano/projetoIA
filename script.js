@@ -1,25 +1,50 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Catálogo com imagens seguras e garantidas por placeholder profissional
+  // Catálogo completo com 9 filmes (os 4 anteriores + 5 novos) e imagens garantidas
   const readyMovies = [
     {
-      title: "Spider-Man",
-      poster: "https://via.placeholder.com/500x750/ff0000/ffffff?text=Spider-Man",
+      title: "Spider-Man: Into the Spider-Verse",
+      poster: "https://via.placeholder.com/500x750/7c3aed/ffffff?text=Spider-Man",
       trailer: "https://www.youtube.com/embed/g4Hbz2jLxvQ"
     },
     {
       title: "Interstellar",
-      poster: "https://via.placeholder.com/500x750/111111/ffffff?text=Interstellar",
+      poster: "https://via.placeholder.com/500x750/3b82f6/ffffff?text=Interstellar",
       trailer: "https://www.youtube.com/embed/zSWdZVtXT7E"
     },
     {
       title: "The Matrix",
-      poster: "https://via.placeholder.com/500x750/00aa00/000000?text=The+Matrix",
+      poster: "https://via.placeholder.com/500x750/10b981/000000?text=The+Matrix",
       trailer: "https://www.youtube.com/embed/vKQi3bBA1y8"
     },
     {
       title: "Inception",
-      poster: "https://via.placeholder.com/500x750/0000bb/ffffff?text=Inception",
+      poster: "https://via.placeholder.com/500x750/6366f1/ffffff?text=Inception",
       trailer: "https://www.youtube.com/embed/YoHD9XEInc0"
+    },
+    {
+      title: "Avengers: Endgame",
+      poster: "https://via.placeholder.com/500x750/ef4444/ffffff?text=Avengers",
+      trailer: "https://www.youtube.com/embed/TcMBFSGVi1c"
+    },
+    {
+      title: "Batman: The Dark Knight",
+      poster: "https://via.placeholder.com/500x750/475569/ffffff?text=The+Dark+Knight",
+      trailer: "https://www.youtube.com/embed/EXeTwQWrcwY"
+    },
+    {
+      title: "Avatar: The Way of Water",
+      poster: "https://via.placeholder.com/500x750/0284c7/ffffff?text=Avatar+2",
+      trailer: "https://www.youtube.com/embed/d9MyW72ELq0"
+    },
+    {
+      title: "Oppenheimer",
+      poster: "https://via.placeholder.com/500x750/d97706/ffffff?text=Oppenheimer",
+      trailer: "https://www.youtube.com/embed/uYPbbksJxIg"
+    },
+    {
+      title: "Dune: Part Two",
+      poster: "https://via.placeholder.com/500x750/b45309/ffffff?text=Dune+2",
+      trailer: "https://www.youtube.com/embed/Way9Dexny3w"
     }
   ];
 
@@ -34,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const videoPlayer = document.getElementById("videoPlayer");
   const closeModal = document.getElementById("closeModal");
 
-  // Carrega os filmes na tela
+  // Carrega os 9 filmes na tela
   readyMovies.forEach(movie => {
     const card = document.createElement("div");
     card.classList.add("movie-card");

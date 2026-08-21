@@ -6,8 +6,8 @@
 }
 
 body {
-  background-color: #141414;
-  color: #ffffff;
+  background-color: #0b0f19; /* Azul bem escuro moderno */
+  color: #f8fafc;
   min-height: 100vh;
 }
 
@@ -15,34 +15,35 @@ body {
   display: none !important;
 }
 
-/* Tela de Autenticação */
+/* Tela de Autenticação com nova cor roxa/azulada */
 #authScreen {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), #141414;
+  background: linear-gradient(135deg, #0f172a, #1e1b4b);
 }
 
 .auth-box {
-  background-color: #1f1f1f;
+  background-color: #1e293b;
   padding: 40px;
-  border-radius: 8px;
+  border-radius: 12px;
   width: 100%;
   max-width: 400px;
   text-align: center;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid #334155;
 }
 
 .auth-box h1 {
-  color: #e50914;
+  color: #a78bfa; /* Tom roxo claro vibrante */
   margin-bottom: 10px;
-  font-size: 2rem;
+  font-size: 2.2rem;
 }
 
 .auth-box h2 {
   font-size: 0.95rem;
-  color: #aaa;
+  color: #94a3b8;
   margin-bottom: 25px;
 }
 
@@ -54,24 +55,24 @@ form {
 
 input {
   padding: 12px;
-  border-radius: 4px;
-  border: 1px solid #333;
-  background-color: #333;
+  border-radius: 6px;
+  border: 1px solid #475569;
+  background-color: #0f172a;
   color: #fff;
   font-size: 1rem;
 }
 
 input:focus {
   outline: none;
-  border-color: #e50914;
+  border-color: #8b5cf6;
 }
 
 button {
   padding: 12px;
-  background-color: #e50914;
+  background-color: #7c3aed; /* Roxo principal */
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   font-weight: bold;
   font-size: 1rem;
   cursor: pointer;
@@ -79,21 +80,21 @@ button {
 }
 
 button:hover {
-  background-color: #f6121d;
+  background-color: #6d28d9;
 }
 
 /* Header do App */
 header {
-  background-color: #000000;
+  background-color: #0f172a;
   padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #222;
+  border-bottom: 1px solid #1e293b;
 }
 
 header h1 {
-  color: #e50914;
+  color: #a78bfa;
   font-size: 1.8rem;
 }
 
@@ -106,11 +107,11 @@ header h1 {
 #logoutBtn {
   padding: 8px 16px;
   font-size: 0.85rem;
-  background-color: #333;
+  background-color: #334155;
 }
 
 #logoutBtn:hover {
-  background-color: #e50914;
+  background-color: #7c3aed;
 }
 
 /* Conteúdo Principal e Galeria */
@@ -121,10 +122,11 @@ main {
 }
 
 .gallery-container h2 {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   font-size: 1.4rem;
-  border-left: 4px solid #e50914;
+  border-left: 4px solid #8b5cf6;
   padding-left: 10px;
+  color: #f1f5f9;
 }
 
 .gallery {
@@ -134,17 +136,19 @@ main {
 }
 
 .movie-card {
-  background-color: #1f1f1f;
-  border-radius: 8px;
+  background-color: #1e293b;
+  border-radius: 10px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  border: 1px solid #334155;
 }
 
 .movie-card:hover {
-  transform: scale(1.03);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.2);
 }
 
 .movie-card img {
@@ -157,25 +161,27 @@ main {
   padding: 15px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
   text-align: center;
 }
 
 .movie-info h3 {
-  font-size: 1rem;
+  font-size: 0.95rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: #f8fafc;
 }
 
 .watch-btn {
-  background-color: #333;
+  background-color: #334155;
   padding: 8px;
   font-size: 0.9rem;
+  border-radius: 6px;
 }
 
 .watch-btn:hover {
-  background-color: #e50914;
+  background-color: #7c3aed;
 }
 
 /* Modal de Vídeo Interno */
@@ -185,7 +191,7 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(11, 15, 25, 0.95);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -197,19 +203,20 @@ main {
   max-width: 800px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 #closeModal {
   align-self: flex-end;
-  background-color: #e50914;
+  background-color: #7c3aed;
   padding: 8px 16px;
   font-size: 0.9rem;
+  border-radius: 6px;
 }
 
 .video-wrapper {
   position: relative;
-  padding-bottom: 56.25%; /* Proporção 16:9 */
+  padding-bottom: 56.25%;
   height: 0;
 }
 
@@ -219,5 +226,5 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 4px;
+  border-radius: 6px;
 }
