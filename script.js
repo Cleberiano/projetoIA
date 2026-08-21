@@ -1,49 +1,49 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Catálogo completo com 9 filmes e capas oficiais do TMDB
+  // Catálogo completo com 9 filmes e capas estilizadas por código (garantido que aparecem!)
   const readyMovies = [
     {
       title: "Spider-Man: Into the Spider-Verse",
-      poster: "https://image.tmdb.org/t/p/w500/iiZZdoQBEYBv6id8su7ImL0oCbD.jpg",
+      poster: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='750' viewBox='0 0 500 750'><rect width='500' height='750' fill='%237c3aed'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23ffffff' font-family='sans-serif' font-size='28' font-weight='bold'>Spider-Man</text></svg>",
       trailer: "https://www.youtube.com/embed/g4Hbz2jLxvQ"
     },
     {
       title: "Interstellar",
-      poster: "https://image.tmdb.org/t/p/w500/gEU2QpI6EItY52nUoB2M0mOaC5H.jpg",
+      poster: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='750' viewBox='0 0 500 750'><rect width='500' height='750' fill='%231e293b'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%2338bdf8' font-family='sans-serif' font-size='28' font-weight='bold'>Interstellar</text></svg>",
       trailer: "https://www.youtube.com/embed/zSWdZVtXT7E"
     },
     {
       title: "The Matrix",
-      poster: "https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg",
+      poster: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='750' viewBox='0 0 500 750'><rect width='500' height='750' fill='%23022c22'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%234ade80' font-family='sans-serif' font-size='28' font-weight='bold'>The Matrix</text></svg>",
       trailer: "https://www.youtube.com/embed/vKQi3bBA1y8"
     },
     {
       title: "Inception",
-      poster: "https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkYSBsmkZWTpsTaO.jpg",
+      poster: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='750' viewBox='0 0 500 750'><rect width='500' height='750' fill='%23311042'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23c084fc' font-family='sans-serif' font-size='28' font-weight='bold'>Inception</text></svg>",
       trailer: "https://www.youtube.com/embed/YoHD9XEInc0"
     },
     {
       title: "Avengers: Endgame",
-      poster: "https://image.tmdb.org/t/p/w500/or06FN3Dka5tukK1e9sl16pB3iy.jpg",
+      poster: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='750' viewBox='0 0 500 750'><rect width='500' height='750' fill='%23450a0a'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23f87171' font-family='sans-serif' font-size='28' font-weight='bold'>Avengers</text></svg>",
       trailer: "https://www.youtube.com/embed/TcMBFSGVi1c"
     },
     {
       title: "Batman: The Dark Knight",
-      poster: "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+      poster: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='750' viewBox='0 0 500 750'><rect width='500' height='750' fill='%230f172a'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%2394a3b8' font-family='sans-serif' font-size='28' font-weight='bold'>The Dark Knight</text></svg>",
       trailer: "https://www.youtube.com/embed/EXeTwQWrcwY"
     },
     {
       title: "Avatar: The Way of Water",
-      poster: "https://image.tmdb.org/t/p/w500/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg",
+      poster: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='750' viewBox='0 0 500 750'><rect width='500' height='750' fill='%23082f49'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%2338bdf8' font-family='sans-serif' font-size='28' font-weight='bold'>Avatar 2</text></svg>",
       trailer: "https://www.youtube.com/embed/d9MyW72ELq0"
     },
     {
       title: "Oppenheimer",
-      poster: "https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg",
+      poster: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='750' viewBox='0 0 500 750'><rect width='500' height='750' fill='%23451a03'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23fbbf24' font-family='sans-serif' font-size='28' font-weight='bold'>Oppenheimer</text></svg>",
       trailer: "https://www.youtube.com/embed/uYPbbksJxIg"
     },
     {
       title: "Dune: Part Two",
-      poster: "https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg",
+      poster: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='750' viewBox='0 0 500 750'><rect width='500' height='750' fill='%23291703'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23f59e0b' font-family='sans-serif' font-size='28' font-weight='bold'>Dune 2</text></svg>",
       trailer: "https://www.youtube.com/embed/Way9Dexny3w"
     }
   ];
