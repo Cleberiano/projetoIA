@@ -4,7 +4,239 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AluraFlix</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Estilos CSS Embutidos */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #0b0f19;
+      color: #f8fafc;
+      min-height: 100vh;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    /* Tela de Autenticação */
+    #authScreen {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #0f172a, #1e1b4b);
+    }
+
+    .auth-box {
+      background-color: #1e293b;
+      padding: 40px;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      border: 1px solid #334155;
+    }
+
+    .auth-box h1 {
+      color: #a78bfa;
+      margin-bottom: 10px;
+      font-size: 2.2rem;
+    }
+
+    .auth-box h2 {
+      font-size: 0.95rem;
+      color: #94a3b8;
+      margin-bottom: 25px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input {
+      padding: 12px;
+      border-radius: 6px;
+      border: 1px solid #475569;
+      background-color: #0f172a;
+      color: #fff;
+      font-size: 1rem;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #8b5cf6;
+    }
+
+    button {
+      padding: 12px;
+      background-color: #7c3aed;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    button:hover {
+      background-color: #6d28d9;
+    }
+
+    /* Header do App */
+    header {
+      background-color: #0f172a;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    header h1 {
+      color: #a78bfa;
+      font-size: 1.8rem;
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    #logoutBtn {
+      padding: 8px 16px;
+      font-size: 0.85rem;
+      background-color: #334155;
+    }
+
+    #logoutBtn:hover {
+      background-color: #7c3aed;
+    }
+
+    /* Conteúdo Principal e Galeria */
+    main {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .gallery-container h2 {
+      margin-bottom: 25px;
+      font-size: 1.4rem;
+      border-left: 4px solid #8b5cf6;
+      padding-left: 10px;
+      color: #f1f5f9;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 25px;
+    }
+
+    .movie-card {
+      background-color: #1e293b;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      border: 1px solid #334155;
+    }
+
+    .movie-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(139, 92, 246, 0.2);
+    }
+
+    .movie-card img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+    }
+
+    .movie-info {
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      text-align: center;
+    }
+
+    .movie-info h3 {
+      font-size: 0.95rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: #f8fafc;
+    }
+
+    .watch-btn {
+      background-color: #334155;
+      padding: 8px;
+      font-size: 0.9rem;
+      border-radius: 6px;
+    }
+
+    .watch-btn:hover {
+      background-color: #7c3aed;
+    }
+
+    /* Modal de Vídeo Interno */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(11, 15, 25, 0.95);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      width: 90%;
+      max-width: 800px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    #closeModal {
+      align-self: flex-end;
+      background-color: #7c3aed;
+      padding: 8px 16px;
+      font-size: 0.9rem;
+      border-radius: 6px;
+    }
+
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 6px;
+    }
+  </style>
 </head>
 <body>
 
@@ -49,6 +281,133 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    // Lógica JavaScript Embutida
+    document.addEventListener("DOMContentLoaded", () => {
+      const readyMovies = [
+        {
+          title: "Spider-Man: Into the Spider-Verse",
+          poster: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='750' viewBox='0 0 500 750'><rect width='500' height='750' fill='%237c3aed'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23ffffff' font-family='sans-serif' font-size='26' font-weight='bold'>Spider-Man</text></svg>",
+          trailer: "https://www.youtube.com/embed/g4Hbz2jLxvQ"
+        },
+        {
+          title: "Interstellar",
+          poster: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='750' viewBox='0 0 500 750'><rect width='500' height='750' fill='%231e293b'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%2338bdf8' font-family='sans-serif' font-size='26' font-weight='bold'>Interstellar</text></svg>",
+          trailer: "https://www.youtube.com/embed/zSWdZVtXT7E"
+        },
+        {
+          title: "The Matrix",
+          poster: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='750' viewBox='0 0 500 750'><rect width='500' height='750' fill='%23022c22'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%234ade80' font-family='sans-serif' font-size='26' font-weight='bold'>The Matrix</text></svg>",
+          trailer: "https://www.youtube.com/embed/vKQi3bBA1y8"
+        },
+        {
+          title: "Inception",
+          poster: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='750' viewBox='0 0 500 750'><rect width='500' height='750' fill='%23311042'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23c084fc' font-family='sans-serif' font-size='26' font-weight='bold'>Inception</text></svg>",
+          trailer: "https://www.youtube.com/embed/YoHD9XEInc0"
+        },
+        {
+          title: "Avengers: Endgame",
+          poster: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='750' viewBox='0 0 500 750'><rect width='500' height='750' fill='%23450a0a'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23f87171' font-family='sans-serif' font-size='26' font-weight='bold'>Avengers</text></svg>",
+          trailer: "https://www.youtube.com/embed/TcMBFSGVi1c"
+        },
+        {
+          title: "Batman: The Dark Knight",
+          poster: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='750' viewBox='0 0 500 750'><rect width='500' height='750' fill='%230f172a'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%2394a3b8' font-family='sans-serif' font-size='26' font-weight='bold'>The Dark Knight</text></svg>",
+          trailer: "https://www.youtube.com/embed/EXeTwQWrcwY"
+        },
+        {
+          title: "Avatar: The Way of Water",
+          poster: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='750' viewBox='0 0 500 750'><rect width='500' height='750' fill='%23082f49'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%2338bdf8' font-family='sans-serif' font-size='26' font-weight='bold'>Avatar 2</text></svg>",
+          trailer: "https://www.youtube.com/embed/d9MyW72ELq0"
+        },
+        {
+          title: "Oppenheimer",
+          poster: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='750' viewBox='0 0 500 750'><rect width='500' height='750' fill='%23451a03'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23fbbf24' font-family='sans-serif' font-size='26' font-weight='bold'>Oppenheimer</text></svg>",
+          trailer: "https://www.youtube.com/embed/uYPbbksJxIg"
+        },
+        {
+          title: "Dune: Part Two",
+          poster: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='750' viewBox='0 0 500 750'><rect width='500' height='750' fill='%23291703'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23f59e0b' font-family='sans-serif' font-size='26' font-weight='bold'>Dune 2</text></svg>",
+          trailer: "https://www.youtube.com/embed/Way9Dexny3w"
+        }
+      ];
+
+      const authScreen = document.getElementById("authScreen");
+      const appScreen = document.getElementById("appScreen");
+      const userForm = document.getElementById("userForm");
+      const userNameDisplay = document.getElementById("userNameDisplay");
+      const logoutBtn = document.getElementById("logoutBtn");
+      const movieGallery = document.getElementById("movieGallery");
+      
+      const videoModal = document.getElementById("videoModal");
+      const videoPlayer = document.getElementById("videoPlayer");
+      const closeModal = document.getElementById("closeModal");
+
+      readyMovies.forEach(movie => {
+        const card = document.createElement("div");
+        card.classList.add("movie-card");
+        
+        card.innerHTML = `
+          <img src="${movie.poster}" alt="${movie.title}">
+          <div class="movie-info">
+            <h3>${movie.title}</h3>
+            <button class="watch-btn">Assistir Trailer</button>
+          </div>
+        `;
+
+        card.querySelector(".watch-btn").addEventListener("click", () => {
+          videoPlayer.src = movie.trailer;
+          videoModal.classList.remove("hidden");
+        });
+
+        movieGallery.appendChild(card);
+      });
+
+      closeModal.addEventListener("click", () => {
+        videoPlayer.src = "";
+        videoModal.classList.add("hidden");
+      });
+
+      checkUserSession();
+
+      userForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+
+        const user = { name, email };
+        localStorage.setItem("activeUser", JSON.stringify(user));
+
+        showAppScreen(user.name);
+        userForm.reset();
+      });
+
+      logoutBtn.addEventListener("click", () => {
+        localStorage.removeItem("activeUser");
+        showAuthScreen();
+      });
+
+      function checkUserSession() {
+        const activeUser = localStorage.getItem("activeUser");
+        if (activeUser) {
+          const user = JSON.parse(activeUser);
+          showAppScreen(user.name);
+        } else {
+          showAuthScreen();
+        }
+      }
+
+      function showAppScreen(userName) {
+        userNameDisplay.textContent = `Olá, ${userName}`;
+        authScreen.classList.add("hidden");
+        appScreen.classList.remove("hidden");
+      }
+
+      function showAuthScreen() {
+        authScreen.classList.remove("hidden");
+        appScreen.classList.add("hidden");
+      }
+    });
+  </script>
 </body>
 </html>
