@@ -168,10 +168,9 @@
       display: flex;
       align-items: flex-end;
       padding: 15px;
-      background-color: #1e293b; /* Cor de fallback caso demore */
+      background-color: #1e293b;
     }
 
-    /* Degradê escuro sobre a imagem para destacar o nome caso precise */
     .movie-poster-bg::after {
       content: '';
       position: absolute;
@@ -181,14 +180,6 @@
       height: 100%;
       background: linear-gradient(to top, rgba(15, 23, 42, 0.9) 0%, transparent 60%);
       pointer-events: none;
-    }
-
-    .movie-poster-bg h4 {
-      position: relative;
-      z-index: 2;
-      color: #fff;
-      font-size: 1rem;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.8);
     }
 
     .movie-info {
@@ -312,9 +303,9 @@
     document.addEventListener("DOMContentLoaded", () => {
       const readyMovies = [
         { title: "Spider-Man: Into the Spider-Verse", poster: "https://image.tmdb.org/t/p/w500/iiZZdoQBEYBv6id8su7ImL0oCbD.jpg", trailer: "https://www.youtube.com/embed/g4Hbz2jLxvQ" },
-        { title: "Interstellar", poster: "https://image.tmdb.org/t/p/w500/gEU2QpI6EItY52nUoB2M0mOaC5H.jpg", trailer: "https://www.youtube.com/embed/zSWdZVtXT7E" },
+        { title: "Interstellar", poster: "https://image.tmdb.org/t/p/w500/rAiYTfKGqDCRIIqo664sY9XZIvQ.jpg", trailer: "https://www.youtube.com/embed/zSWdZVtXT7E" },
         { title: "The Matrix", poster: "https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg", trailer: "https://www.youtube.com/embed/vKQi3bBA1y8" },
-        { title: "Inception", poster: "https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkYSBsmkZWTpsTaO.jpg", trailer: "https://www.youtube.com/embed/YoHD9XEInc0" },
+        { title: "Inception", poster: "https://image.tmdb.org/t/p/w500/edv5CZvWj09upOsy2Y6IwDhK8bt.jpg", trailer: "https://www.youtube.com/embed/YoHD9XEInc0" },
         { title: "Avengers: Endgame", poster: "https://image.tmdb.org/t/p/w500/or06FN3Dka5tukK1e9sl16pB3iy.jpg", trailer: "https://www.youtube.com/embed/TcMBFSGVi1c" },
         { title: "Batman: The Dark Knight", poster: "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg", trailer: "https://www.youtube.com/embed/EXeTwQWrcwY" },
         { title: "Avatar: The Way of Water", poster: "https://image.tmdb.org/t/p/w500/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg", trailer: "https://www.youtube.com/embed/d9MyW72ELq0" },
