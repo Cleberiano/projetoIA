@@ -1,4 +1,6 @@
-const readyMovies = [
+document.addEventListener("DOMContentLoaded", () => {
+  // Catálogo com imagens seguras e garantidas por placeholder profissional
+  const readyMovies = [
     {
       title: "Spider-Man",
       poster: "https://via.placeholder.com/500x750/ff0000/ffffff?text=Spider-Man",
@@ -6,41 +8,17 @@ const readyMovies = [
     },
     {
       title: "Interstellar",
-      poster: "https://via.placeholder.com/500x750/000000/ffffff?text=Interstellar",
+      poster: "https://via.placeholder.com/500x750/111111/ffffff?text=Interstellar",
       trailer: "https://www.youtube.com/embed/zSWdZVtXT7E"
     },
     {
       title: "The Matrix",
-      poster: "https://via.placeholder.com/500x750/00ff00/000000?text=The+Matrix",
+      poster: "https://via.placeholder.com/500x750/00aa00/000000?text=The+Matrix",
       trailer: "https://www.youtube.com/embed/vKQi3bBA1y8"
     },
     {
       title: "Inception",
-      poster: "https://via.placeholder.com/500x750/0000ff/ffffff?text=Inception",
-      trailer: "https://www.youtube.com/embed/YoHD9XEInc0"
-    }
-  ];
-document.addEventListener("DOMContentLoaded", () => {
-  // Catálogo de filmes prontos com imagens de servidores abertos (TMDB)
-  const readyMovies = [
-    {
-      title: "Spider-Man: Into the Spider-Verse",
-      poster: "https://image.tmdb.org/t/p/w500/uJQdJ46mK08X6tTqT5eHlqYp0f7.jpg",
-      trailer: "https://www.youtube.com/embed/g4Hbz2jLxvQ"
-    },
-    {
-      title: "Interstellar",
-      poster: "https://image.tmdb.org/t/p/w500/gEU2QpI6EItY52nUoB2M0mOaC5H.jpg",
-      trailer: "https://www.youtube.com/embed/zSWdZVtXT7E"
-    },
-    {
-      title: "The Matrix",
-      poster: "https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg",
-      trailer: "https://www.youtube.com/embed/vKQi3bBA1y8"
-    },
-    {
-      title: "Inception",
-      poster: "https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkYSBsmkZWTpsTaO.jpg",
+      poster: "https://via.placeholder.com/500x750/0000bb/ffffff?text=Inception",
       trailer: "https://www.youtube.com/embed/YoHD9XEInc0"
     }
   ];
