@@ -8,41 +8,48 @@
 body {
   background-color: #141414;
   color: #ffffff;
-  padding-bottom: 40px;
+  min-height: 100vh;
 }
 
-header {
-  background-color: #000000;
-  padding: 20px;
-  text-align: center;
-  color: #e50914;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+/* Classe para esconder telas */
+.hidden {
+  display: none !important;
 }
 
-main {
-  max-width: 1000px;
-  margin: 30px auto;
-  padding: 0 20px;
+/* Tela de Cadastro / Login */
+#authScreen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #141414;
 }
 
-/* Formulário e Lista de Usuários */
-.form-container, .users-container {
+.auth-box {
   background-color: #1f1f1f;
-  padding: 20px;
+  padding: 40px;
   border-radius: 8px;
-  margin-bottom: 30px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
-.form-container h2, .users-container h2 {
-  margin-bottom: 15px;
-  font-size: 1.2rem;
-  color: #ddd;
+.auth-box h1 {
+  color: #e50914;
+  margin-bottom: 10px;
+}
+
+.auth-box h2 {
+  font-size: 1rem;
+  color: #aaa;
+  margin-bottom: 20px;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 15px;
 }
 
 input {
@@ -75,18 +82,39 @@ button:hover {
   background-color: #f6121d;
 }
 
-.user-list {
-  list-style: none;
+/* Tela Principal do App */
+header {
+  background-color: #000000;
+  padding: 15px 30px;
   display: flex;
-  flex-direction: column;
-  gap: 8px;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.user-list li {
-  background-color: #2b2b2b;
-  padding: 10px 15px;
-  border-radius: 4px;
-  border-left: 4px solid #e50914;
+header h1 {
+  color: #e50914;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+#logoutBtn {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  background-color: #333;
+}
+
+#logoutBtn:hover {
+  background-color: #e50914;
+}
+
+main {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 20px;
 }
 
 /* Galeria de Filmes */

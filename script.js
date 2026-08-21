@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Lista de filmes prontos
+  // Lista de filmes cadastrados
   const readyMovies = [
     {
       title: "Spider-Man: Into the Spider-Verse",
@@ -23,11 +23,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   ];
 
+  const authScreen = document.getElementById("authScreen");
+  const appScreen = document.getElementById("appScreen");
   const userForm = document.getElementById("userForm");
-  const userList = document.getElementById("userList");
+  const userNameDisplay = document.getElementById("userNameDisplay");
+  const logoutBtn = document.getElementById("logoutBtn");
   const movieGallery = document.getElementById("movieGallery");
 
-  // Renderiza os filmes do catálogo
+  // Carrega os filmes no catálogo
   readyMovies.forEach(movie => {
     const card = document.createElement("div");
     card.classList.add("movie-card");
@@ -39,43 +42,49 @@ document.addEventListener("DOMContentLoaded", () => {
     movieGallery.appendChild(card);
   });
 
-  // Carrega os usuários salvos no localStorage
-  loadUsers();
+  // Verifica se o usuário já está cadastrado/logado
+  checkUserSession();
 
-  // Manipulação do cadastro de usuários
+  // Evento de cadastro
   userForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
 
-    const newUser = { name, email };
+    const user = { name, email };
 
-    saveUser(newUser);
-    addUserToDOM(newUser);
+    // Salva o usuário ativo
+    localStorage.setItem("activeUser", JSON.stringify(user));
 
+    showAppScreen(user.name);
     userForm.reset();
   });
 
-  function saveUser(user) {
-    const users = getUsersFromStorage();
-    users.push(user);
-    localStorage.setItem("aluraFlixUsers", JSON.stringify(users));
+  // Evento de sair
+  logoutBtn.addEventListener("click", () => {
+    localStorage.removeItem("activeUser");
+    showAuthScreen();
+  });
+
+  function checkUserSession() {
+    const activeUser = localStorage.getItem("activeUser");
+    if (activeUser) {
+      const user = JSON.parse(activeUser);
+      showAppScreen(user.name);
+    } else {
+      showAuthScreen();
+    }
   }
 
-  function getUsersFromStorage() {
-    const users = localStorage.getItem("aluraFlixUsers");
-    return users ? JSON.parse(users) : [];
+  function showAppScreen(userName) {
+    userNameDisplay.textContent = `Olá, ${userName}!`;
+    authScreen.classList.add("hidden");
+    appScreen.classList.remove("hidden");
   }
 
-  function loadUsers() {
-    const users = getUsersFromStorage();
-    users.forEach(user => addUserToDOM(user));
-  }
-
-  function addUserToDOM(user) {
-    const li = document.createElement("li");
-    li.textContent = `${user.name} - (${user.email})`;
-    userList.appendChild(li);
+  function showAuthScreen() {
+    authScreen.classList.remove("hidden");
+    appScreen.classList.add("hidden");
   }
 });
